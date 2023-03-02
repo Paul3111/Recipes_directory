@@ -1,3 +1,7 @@
+# Paired with Paul Lazar
+
+require 'recipes_repository'
+require 'database_connection'
 
 RSpec.describe RecipesRepository do
   def reset_recipes_table
@@ -6,30 +10,27 @@ RSpec.describe RecipesRepository do
     connection.exec(seed_sql)
   end
   
-  describe RecipesRepository do
-    before(:each) do 
-      reset_recipes_table
-    end
+  before(:each) do 
+    reset_recipes_table
+  end
   
-  
-    #1
-    repo = RecipeRepository.new
+  it "Returns recipe 1 when id = 1." do
+    repo = RecipesRepository.new
     recipe = repo.find(1)
-  
-    recipe.id # =>  1
-    recipe.name # => 'Carbonara'
-    recipe.cooking_time # => 12
-    recipe.rating # => 5
-  
-  
-    #2
-    repo = RecipeRepository.new
+    
+    expect(recipe.id).to eq 1
+    expect(recipe.name).to eq 'Carbonara'
+    expect(recipe.cooking_time).to eq 12
+    expect(recipe.rating).to eq 5
+  end
+   
+  it "Returns recipe 3 when id = 3." do
+    repo = RecipesRepository.new
     recipe = repo.find(3)
   
-    recipe.id # =>  3
-    recipe.name # => 'Fried pizza'
-    recipe.cooking_time # => 15
-    recipe.rating # => 3
+    expect(recipe.id).to eq 3
+    expect(recipe.name).to eq 'Fried pizza'
+    expect(recipe.cooking_time).to eq 15
+    expect(recipe.rating).to eq 3
   end
-
 end
