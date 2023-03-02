@@ -55,12 +55,12 @@ Usually, the Model class name will be the capitalised table name (single instead
 # Table name: recipes
 
 # Model class
-# (in lib/recipes.rb)
+# (in lib/recipe.rb)
 class Recipe
 end
 
 # Repository class
-# (in lib/recipe_repository.rb)
+# (in lib/recipes_repository.rb)
 class RecipeRepository
 end
 4. Implement the Model class
