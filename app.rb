@@ -1,7 +1,7 @@
 require_relative 'lib/database_connection'
 require_relative 'lib/recipes_repository'
 
-DatabaseConnection.connect('recipes_library')
+DatabaseConnection.connect('recipes_directory')
 
 recipes_repository = RecipesRepository.new
 
