@@ -1,5 +1,5 @@
 require 'pg'
-require 'recipe'
+require_relative 'recipe'
 
 class RecipesRepository
   def all
